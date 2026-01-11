@@ -1,0 +1,134 @@
+/* ===============================
+   GLOBAL BASE
+================================*/
+
+:root {
+    --teal: #0A6C74;
+    --teal-dark: #064B52;
+    --sand: #D9C9A1;
+    --sand-light: #EDE4CF;
+    --cream: #FAF9F6;
+    --text-dark: #333;
+    --text-light: #555;
+    --radius: 6px;
+    --max-width: 900px;
+    --shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+html {
+    font-size: 18px; /* Senior-friendly sizing */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ===============================
+   HEADER + NAVIGATION
+================================*/
+
+header {
+    background-color: var(--teal);
+    color: white;
+    padding: 1.5rem 1rem;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--sand);
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: 0.25s;
+}
+
+nav a:hover {
+    border-bottom: 2px solid var(--sand);
+    color: white;
+}
+
+/* ===============================
+   MAIN CONTENT AREA
+================================*/
+
+main {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 6px solid var(--teal);
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--teal-dark);
+    font-size: 1.6rem;
+}
+
+/* ===============================
+   FOOTER
+================================*/
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    background-color: var(--sand-light);
+    color: var(--text-light);
+    border-top: 4px solid var(--teal);
+    font-size: 0.9rem;
+}
+
+/* ===============================
+   LINKS (general)
+================================*/
+
+a {
+    color: var(--teal-dark);
+}
+a:hover {
+    color: var(--teal);
+}
+
+/* ===============================
+   RESPONSIVE (Mobile)
+================================*/
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        margin-top: 1.2rem;
+    }
+}
