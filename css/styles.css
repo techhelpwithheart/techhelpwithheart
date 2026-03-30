@@ -3,29 +3,31 @@
 ================================*/
 
 :root {
-    --teal: #0A6C74;
-    --teal-dark: #064B52;
-    --sand: #D9C9A1;
-    --sand-light: #EDE4CF;
-    --cream: #FAF9F6;
-    --text-dark: #333;
-    --text-light: #555;
-    --radius: 6px;
+    --red: #b00020;
+    --red-dark: #8c0019;
+    --text-dark: #111111;
+    --text-medium: #444444;
+    --border: #e5e5e5;
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --radius: 10px;
     --max-width: 900px;
-    --shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 html {
-    font-size: 18px; /* Senior-friendly sizing */
+    font-size: 18px; /* senior-friendly sizing */
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: var(--cream);
-    color: var(--text-dark);
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg);
 }
 
 /* ===============================
@@ -33,16 +35,17 @@ body {
 ================================*/
 
 header {
-    background-color: var(--teal);
-    color: white;
+    background-color: var(--bg);
+    color: var(--text-dark);
     padding: 1.5rem 1rem;
-    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--border);
 }
 
 header h1 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.8rem;
+    margin: 0 0 0.75rem 0;
+    font-size: 2rem;
     font-weight: bold;
+    color: var(--text-dark);
 }
 
 nav {
@@ -52,17 +55,17 @@ nav {
 }
 
 nav a {
-    color: var(--sand);
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: bold;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
     border-bottom: 2px solid transparent;
-    transition: 0.25s;
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
 
 nav a:hover {
-    border-bottom: 2px solid var(--sand);
-    color: white;
+    color: var(--red);
+    border-bottom-color: var(--red);
 }
 
 /* ===============================
@@ -71,36 +74,83 @@ nav a:hover {
 
 main {
     max-width: var(--max-width);
-    margin: 2rem auto;
+    margin: 2.5rem auto;
     padding: 0 1rem;
 }
 
 section {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border-left: 6px solid var(--teal);
+    background-color: #ffffff;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+section + section {
+    margin-top: 1.5rem;
 }
 
 h2 {
     margin-top: 0;
-    color: var(--teal-dark);
-    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    font-size: 2rem;
+    line-height: 1.25;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-medium);
+    font-size: 1.05rem;
+}
+
+/* ===============================
+   BUTTONS / CTA LINKS
+================================*/
+
+.button,
+.cta-button {
+    display: inline-block;
+    background-color: var(--red);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--red);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover,
+.cta-button:hover {
+    background-color: var(--red-dark);
+    color: #ffffff;
+}                         
 /* ===============================
    FOOTER
 ================================*/
 
 footer {
     text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-    background-color: var(--sand-light);
-    color: var(--text-light);
-    border-top: 4px solid var(--teal);
-    font-size: 0.9rem;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    background-color: var(--bg-soft);
+    color: var(--text-medium);
+    border-top: 1px solid var(--border);
+    font-size: 0.95rem;
 }
 
 /* ===============================
@@ -108,10 +158,21 @@ footer {
 ================================*/
 
 a {
-    color: var(--teal-dark);
+    color: var(--text-dark);
 }
+
 a:hover {
-    color: var(--teal);
+    color: var(--red);
+}
+
+/* ===============================
+   IMAGES
+================================*/
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ===============================
@@ -119,16 +180,32 @@ a:hover {
 ================================*/
 
 @media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        gap: 0.6rem;
+    html {
+        font-size: 17px;
+    }
+
+    header {
+        padding: 1.25rem 1rem;
     }
 
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.7rem;
     }
 
     main {
-        margin-top: 1.2rem;
+        margin: 1.5rem auto;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
     }
 }
