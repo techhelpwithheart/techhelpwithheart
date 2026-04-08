@@ -184,6 +184,35 @@ img {
     height: auto;
     display: block;
 }
+/* ===============================
+   CONTACT FORM
+================================*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+form input,
+form textarea {
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 1rem;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--red);
+}
 
 /* ===============================
    RESPONSIVE (Mobile)
