@@ -294,8 +294,15 @@ form textarea:focus {
 }
 
 .contact-form label {
+    display: block;
+    width: 100%;
+    text-align: left;
     font-weight: bold;
     margin-top: 0.5rem;
+}
+
+.contact-form .button {
+    align-self: center;
 }
 
 .contact-form input,
